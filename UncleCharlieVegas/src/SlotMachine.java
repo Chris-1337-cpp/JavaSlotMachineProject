@@ -115,7 +115,7 @@ public class SlotMachine {
 		System.out.println("The generated jackpot number is " + jackpotWin);
 		System.out.println("The winning jackpot number is " + getJackpotOdds());
 		System.out.println("The generated regular number is " + regularWin);
-		System.out.println("The winning jackpot number is " + getRegularOdds());
+		System.out.println("The winning regular number is " + getRegularOdds());
 		
 		//if the random number equals the odds
 		if(getJackpotOdds() == jackpotWin) {
@@ -125,7 +125,7 @@ public class SlotMachine {
 			//subtract funds from machine
 		}
 		if(getRegularOdds() == regularWin) {
-			System.out.println("you have won the jackpot win");
+			System.out.println("you have won the Regular win");
 			//output regular design
 			//add funds to player 
 			//subtract funds from machine
