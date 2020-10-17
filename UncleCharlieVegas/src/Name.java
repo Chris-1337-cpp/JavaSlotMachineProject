@@ -64,14 +64,14 @@ public class Name {
 		return result;
 	}
 	public void setName() {
-		System.out.println("Enter your first name");
+		System.out.println("Enter your first name:");
 		String first = input.next();
 		setFirstName(first);
-		System.out.println("Enter your Middle name (press enter to skip)");
+		System.out.println("Enter your Middle name (press enter to skip):");
 		input.nextLine();
 		String middle = input.nextLine();
 		setMiddleName(middle);
-		System.out.println("Enter your last name");
+		System.out.println("Enter your last name:");
 		String last = input.next();
 		setLastName(last);
 		

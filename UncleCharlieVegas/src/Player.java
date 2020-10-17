@@ -48,17 +48,43 @@ public class Player {
 	}
 	
 	
-	public void gamble() {
-		System.out.println("Gamble function initiated");
-	}
+	public void gamble(SlotMachine machine) {
+		letsGambleText();
+		//Make sure player Is old enough to gamble complete later
+		if(getPlayerBalance() > 0 || machine.getSlotBalance() <= 0) {
+			machine.startGambling(this);//starts the gambling in the machine class
+			
+		}else {
+			System.out.println("This player or machine has no money and can not gamble");
+		}
+	}//end of gamble method
 	
 	
 	public void makePlayer() {
-		System.out.println("Create your player");
+		System.out.println("<><><><><><><>Create your player<><><><><><><>");
 		name = new Name();
 		DOB = new Date();
 		System.out.println("Enter Players starting balance");
 		setPlayerBalance(input.nextInt());
+	}
+	
+	
+	
+	public void letsGambleText() {
+		System.out.println(" /$$                   /$$                                                      /$$       /$$");
+		System.out.println("| $$                  | $$                                                     | $$      | $$");
+		System.out.println("| $$        /$$$$$$  /$$$$$$   /$$$$$$$        /$$$$$$   /$$$$$$  /$$$$$$/$$$$ | $$$$$$$ | $$  /$$$$$$");
+		System.out.println("| $$       /$$__  $$|_  $$_/  /$$_____/       /$$__  $$ |____  $$| $$_  $$_  $$| $$__  $$| $$ /$$__  $$");
+		System.out.println("| $$      | $$$$$$$$  | $$   |  $$$$$$       | $$  \\ $$  /$$$$$$$| $$ \\ $$ \\ $$| $$  \\ $$| $$| $$$$$$$$");
+		System.out.println("| $$      | $$_____/  | $$ /$$\\____  $$      | $$  | $$ /$$__  $$| $$ | $$ | $$| $$  | $$| $$| $$_____/");
+		System.out.println("| $$$$$$$$|  $$$$$$$  |  $$$$//$$$$$$$/      |  $$$$$$$|  $$$$$$$| $$ | $$ | $$| $$$$$$$/| $$|  $$$$$$$");
+		System.out.println("|________/ \\_______/   \\___/ |_______/        \\____  $$ \\_______/|__/ |__/ |__/|_______/ |__/ \\_______/");
+		System.out.println("                                              /$$  \\ $$ ");
+		System.out.println("                                             |  $$$$$$/ ");
+		System.out.println("                                              \\______/ ");
+		
+		
+		
 	}
 	
 	

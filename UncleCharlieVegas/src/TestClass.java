@@ -4,9 +4,12 @@ public class TestClass {
 
 	public static void main(String[] args) {
 		
+		Scanner input = new Scanner(System.in);
 		boolean playing = true;
+		
 		//create array of slot Machines
 		SlotMachine[] machine = new SlotMachine[50];
+		
 		//create array of players 
 		Player[] player = new Player[50];
 		
@@ -19,38 +22,47 @@ public class TestClass {
 		player[0] = new Player(new Name("Monkey","D","Luffy"),new Date(5,5,1999),1000);
 		
 		do {
-			int choice = menue();
+			int choice = menue();//outputs menu and takes in the users selection
 			switch(choice) {
 			case 1:
+				//add player
 				System.out.println();
-				//Add player
-				System.out.println("Selected add a player");/////////////////////////////////////////////////
+				//System.out.println("Selected add a player");/////////////////////////////////////////////////
 				player[Player.getPlayerAmount()] = new Player();
-				System.out.println("There are " + Player.getPlayerAmount() + " Players");
+				System.out.println("There are now " + Player.getPlayerAmount() + " Players");
 				System.out.println();
 				break;
 			case 2:
 				//Add a slot Machine
-				System.out.println("Selected add a slot machine");/////////////////////////////////////////////
+				//System.out.println("Selected add a slot machine");/////////////////////////////////////////////
 				machine[SlotMachine.getNumSlots()] = new SlotMachine();
 				System.out.println("There are " + SlotMachine.getNumSlots() + " Slot Machines");
 				System.out.println();
 				break;
 			case 3:
+				//Gamble
 				System.out.println("Selected Gamble");
-				//gamble
-				//Select a player
+				int playerSelection;
+				int machineSelection;
+				try {
 				System.out.println("Select a player...............");
 				for(int i = 0; i < Player.getPlayerAmount(); i++) {
 					System.out.println("Option "+i+":.................. ");
 					System.out.println(player[i]);
-					System.out.println();
 				}
-				//input selection
-				//player[input].gamble
-				//use a try catch block to make sure they enter a interger
-				//wait for users choice then call the gamble function in player
-				
+				System.out.print(".........................>");
+				playerSelection = input.nextInt();
+				System.out.println("Select a machine...............");
+				for(int i = 0; i < SlotMachine.getNumSlots(); i++) {
+					System.out.println("Option ["+i+"]:.................. ");
+					System.out.println(machine[i]);
+				}
+				System.out.print(".........................>");
+				machineSelection = input.nextInt();
+				player[playerSelection].gamble(machine[machineSelection]);
+				}catch(Exception x) {
+					System.out.println("Incorrect input");
+				}
 				break;
 			case 4:
 				//Quit
@@ -58,6 +70,7 @@ public class TestClass {
 				playing = false;
 				break;
 			case 5:
+				//outputs list of all slot machines and players
 				System.out.println("viewing all slot machines and all players");
 				System.out.println("viewing all slot machines");
 				System.out.println();
