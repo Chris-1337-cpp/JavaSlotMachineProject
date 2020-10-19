@@ -109,6 +109,7 @@ public class SlotMachine {
 	public void startGambling(Player player) {
 		System.out.println("Have reached start gambling function");
 		player.setPlayerBalance(player.getPlayerBalance() - 1);// player pays the 1 dollar
+		setSlotBalance(getSlotBalance() + 1);// pays the 1dollar fee
 		//start random numbers to determine if they are a winner 
 		int regularWin = random.nextInt(getRegularOdds() + 1);
 		int jackpotWin = random.nextInt(getJackpotOdds() + 1);
@@ -119,16 +120,31 @@ public class SlotMachine {
 		
 		//if the random number equals the odds
 		if(getJackpotOdds() == jackpotWin) {
+			this.setJackpotPayouts(getJackpotPayouts() + 1); //keeps track of how many times the jackpot has been paid
 			System.out.println("Congradulations You Have won the Jackpot");
 			//output jackpot design
-			//add funds to player 
-			//subtract funds from machine
+			//add funds to player & subtracts funds from slot machine
+			if(this.getSlotBalance() - this.getSlotJackpotPayout() < 0) {
+				player.setPlayerBalance(player.getPlayerBalance() + this.getSlotBalance());
+				this.setSlotBalance(0);
+			}else {
+				player.setPlayerBalance(player.getPlayerBalance() + this.getSlotJackpotPayout());
+				this.setSlotBalance(getSlotBalance() - this.getSlotJackpotPayout());
+			}
+			
 		}
 		if(getRegularOdds() == regularWin) {
+			this.setRegularPayouts(getRegularPayouts() + 1);
 			System.out.println("you have won the Regular win");
 			//output regular design
-			//add funds to player 
-			//subtract funds from machine
+			//add funds to player and subtracts funds from the machine 
+			if(this.getSlotBalance() - this.getSlotRegularPayout() < 0) {
+				player.setPlayerBalance(player.getPlayerBalance() + this.getSlotBalance());
+				this.setSlotBalance(0);
+			}else {
+				player.setPlayerBalance(player.getPlayerBalance() + this.getSlotRegularPayout());
+				this.setSlotBalance(getSlotBalance() - this.getSlotRegularPayout());
+			}
 		}
 		//one random number number for the jackpot
 		//one random number for the regular win
