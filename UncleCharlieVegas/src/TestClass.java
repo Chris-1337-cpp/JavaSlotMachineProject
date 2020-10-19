@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class TestClass {
 
 	public static void main(String[] args) {
+		slotMachine();
 		
 		Scanner input = new Scanner(System.in);
 		boolean playing = true;
@@ -67,6 +68,7 @@ public class TestClass {
 			case 4:
 				//Quit
 				System.out.println("Thank you for visiting Goodbye");
+				seeYaLater();
 				playing = false;
 				break;
 			case 5:
@@ -133,6 +135,96 @@ public class TestClass {
 		
 	}
 	
+	static public void youLose() {
+		System.out.println("\\ \\ / /__  _   _  | |    ___  ___  ___   _ / /");
+		System.out.println(" \\ V / _ \\| | | | | |   / _ \\/ __|/ _ \\ (_) | ");
+		System.out.println("  | | (_) | |_| | | |__| (_) \\__ \\  __/  _| | ");
+		System.out.println("  |_|\\___/ \\__,_| |_____\\___/|___/\\___| (_) | ");
+		System.out.println("                                           \\_\\");
+	}
+	
+	
+	static public void jackpotWin() {
+		System.out.println("    /$$$$$  /$$$$$$   /$$$$$$  /$$   /$$ /$$$$$$$   /$$$$$$  /$$$$$$$$");
+		System.out.println("   |__  $$ /$$__  $$ /$$__  $$| $$  /$$/| $$__  $$ /$$__  $$|__  $$__/");
+		System.out.println("      | $$| $$  \\ $$| $$  \\__/| $$ /$$/ | $$  \\ $$| $$  \\ $$   | $$   ");
+		System.out.println("      | $$| $$$$$$$$| $$      | $$$$$/  | $$$$$$$/| $$  | $$   | $$   ");
+		System.out.println(" /$$  | $$| $$__  $$| $$      | $$  $$  | $$____/ | $$  | $$   | $$   ");
+		System.out.println("| $$  | $$| $$  | $$| $$    $$| $$\\  $$ | $$      | $$  | $$   | $$   ");
+		System.out.println("|  $$$$$$/| $$  | $$|  $$$$$$/| $$ \\  $$| $$      |  $$$$$$/   | $$   ");
+		System.out.println(" \\______/ |__/  |__/ \\______/ |__/  \\__/|__/       \\______/    |__/   ");
+		
+		System.out.println("   /     | /      \\  /      \\ /  |  /  |/       \\  /      \\ /        |");
+		System.out.println("   $$$$$ |/$$$$$$  |/$$$$$$  |$$ | /$$/ $$$$$$$  |/$$$$$$  |$$$$$$$$/ ");
+		System.out.println("      $$ |$$ |__$$ |$$ |  $$/ $$ |/$$/  $$ |__$$ |$$ |  $$ |   $$ |   ");
+		System.out.println(" __   $$ |$$    $$ |$$ |      $$  $$<   $$    $$/ $$ |  $$ |   $$ |   ");
+		System.out.println("/  |  $$ |$$$$$$$$ |$$ |   __ $$$$$  \\  $$$$$$$/  $$ |  $$ |   $$ |   ");
+		System.out.println("$$ \\__$$ |$$ |  $$ |$$ \\__/  |$$ |$$  \\ $$ |      $$ \\__$$ |   $$ |   ");
+		System.out.println("$$    $$/ $$ |  $$ |$$    $$/ $$ | $$  |$$ |      $$    $$/    $$ |   ");
+		System.out.println(" $$$$$$/  $$/   $$/  $$$$$$/  $$/   $$/ $$/        $$$$$$/     $$/    ");
+	}
+	
+	
+	static public void youWon() {
+		System.out.println(" /$$     /$$                  /$$                         /$$      /$$                    ");
+		System.out.println("|  $$   /$$/                 | $/                        | $$  /$ | $$                    ");
+		System.out.println(" \\  $$ /$$//$$$$$$  /$$   /$$|_//$$    /$$ /$$$$$$       | $$ /$$$| $$  /$$$$$$  /$$$$$$$ ");
+		System.out.println("  \\  $$$$//$$__  $$| $$  | $$  |  $$  /$$//$$__  $$      | $$/$$ $$ $$ /$$__  $$| $$__  $$");
+		System.out.println("   \\  $$/| $$  \\ $$| $$  | $$   \\  $$/$$/| $$$$$$$$      | $$$$_  $$$$| $$  \\ $$| $$  \\ $$");
+		System.out.println("    | $$ | $$  | $$| $$  | $$    \\  $$$/ | $$_____/      | $$$/ \\  $$$| $$  | $$| $$  | $$");
+		System.out.println("    | $$ |  $$$$$$/|  $$$$$$/     \\  $/  |  $$$$$$$      | $$/   \\  $$|  $$$$$$/| $$  | $$");
+		System.out.println("    |__/  \\______/  \\______/       \\_/    \\_______/      |__/     \\__/ \\______/ |__/  |__/");
+	}
+	
+	static public void slotMachine() {
+		System.out.println("                              .-------.");
+		System.out.println("                              |Jackpot|");
+		System.out.println("                  ____________|_______|____________");
+		System.out.println("                 |  __    __    ___  _____   __    |");
+		System.out.println("                 | / _\\  / /   /___\\/__   \\ / _\\   |");
+		System.out.println("                 | \\ \\  / /   //  //  / /\\ \\\\ \\  25| ");
+		System.out.println("                 | _\\ \\/ /___/ \\_//  / /  \\/_\\ \\ []| ");
+		System.out.println("                 | \\__/\\____/\\___/   \\/     \\__/ []|");
+		System.out.println("                 |===_______===_______===_______===|");
+		System.out.println("                 ||*|\\_     |*| _____ |*|\\_     |*||");
+		System.out.println("                 ||*|| \\ _  |*||     ||*|| \\ _  |*||");
+		System.out.println("                 ||*| \\_(_) |*||*BAR*||*| \\_(_) |*||");
+		System.out.println("                 ||*| (_)   |*||_____||*| (_)   |*|| ");
+		System.out.println("                 ||*|_______|*|_______|*|_______|*||(__)");
+		System.out.println("                 |===_______===_______===_______===| ||");
+		System.out.println("                 ||*| _____ |*|\\_     |*|  ___  |*|| ||");
+		System.out.println("                 ||*||     ||*|| \\ _  |*| |_  | |*|| ||");
+		System.out.println("                 ||*||*BAR*||*| \\_(_) |*|  / /  |*|| ||");
+		System.out.println("                 ||*||_____||*| (_)   |*| /_/   |*|| ||");
+		System.out.println("                 ||*|_______|*|_______|*|_______|*||_//");
+		System.out.println("                 |===_______===_______===_______===|_/");
+		System.out.println("                 ||*|  ___  |*|   |   |*| _____ |*||");
+		System.out.println("                 ||*| |_  | |*|  / \\  |*||     ||*||");
+		System.out.println("                 ||*|  / /  |*| /_ _\\ |*||*BAR*||*|| ");
+		System.out.println("                 ||*| /_/   |*|   O   |*||_____||*|| ");
+		System.out.println("                 ||*|_______|*|_______|*|_______|*||");
+		System.out.println("                 |lc=___________________________===|");
+		System.out.println("                 |  /___________________________\\  |");
+		System.out.println("                 |   |                         |   |");
+		System.out.println("                _|    \\_______________________/    |_");
+		System.out.println("               (_____________________________________)");
+	}
+	
+	
+	static public void seeYaLater() {
+		
+		System.out.println("    /$$                                                        /$$             /$$                                /$$$$$$  /$$                           /$$ /$$ ");
+		System.out.println("  /$$$$$$                                                     | $$            | $$                               /$$__  $$| $$                          | $$|__/  ");
+		System.out.println(" /$$__  $$  /$$$$$$   /$$$$$$        /$$   /$$  /$$$$$$       | $$  /$$$$$$  /$$$$$$    /$$$$$$   /$$$$$$       | $$  \\__/| $$$$$$$   /$$$$$$   /$$$$$$ | $$ /$$  /$$$$$$");
+		System.out.println("| $$  \\__/ /$$__  $$ /$$__  $$      | $$  | $$ |____  $$      | $$ |____  $$|_  $$_/   /$$__  $$ /$$__  $$      | $$      | $$__  $$ |____  $$ /$$__  $$| $$| $$ /$$__  $$");
+		System.out.println("|  $$$$$$ | $$$$$$$$| $$$$$$$$      | $$  | $$  /$$$$$$$      | $$  /$$$$$$$  | $$    | $$$$$$$$| $$  \\__/      | $$      | $$  \\ $$  /$$$$$$$| $$  \\__/| $$| $$| $$$$$$$$");
+		System.out.println(" \\____  $$| $$_____/| $$_____/      | $$  | $$ /$$__  $$      | $$ /$$__  $$  | $$ /$$| $$_____/| $$            | $$    $$| $$  | $$ /$$__  $$| $$      | $$| $$| $$_____/");
+		System.out.println(" /$$  \\ $$|  $$$$$$$|  $$$$$$$      |  $$$$$$$|  $$$$$$$      | $$|  $$$$$$$  |  $$$$/|  $$$$$$$| $$            |  $$$$$$/| $$  | $$|  $$$$$$$| $$      | $$| $$|  $$$$$$$");
+		System.out.println("|  $$$$$$/ \\_______/ \\_______/       \\____  $$ \\_______/      |__/ \\_______/   \\___/   \\_______/|__/             \\______/ |__/  |__/ \\_______/|__/      |__/|__/ \\_______/");
+		System.out.println(" \\_  $$_/                            /$$  | $$  ");
+		System.out.println("   \\__/                             |  $$$$$$/    ");
+		
+	}
 	
 	
 	

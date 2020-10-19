@@ -123,6 +123,7 @@ public class SlotMachine {
 			this.setJackpotPayouts(getJackpotPayouts() + 1); //keeps track of how many times the jackpot has been paid
 			System.out.println("Congradulations You Have won the Jackpot");
 			//output jackpot design
+			TestClass.jackpotWin();
 			//add funds to player & subtracts funds from slot machine
 			if(this.getSlotBalance() - this.getSlotJackpotPayout() < 0) {
 				player.setPlayerBalance(player.getPlayerBalance() + this.getSlotBalance());
@@ -134,6 +135,7 @@ public class SlotMachine {
 			
 		}
 		if(getRegularOdds() == regularWin) {
+			TestClass.youWon();
 			this.setRegularPayouts(getRegularPayouts() + 1);
 			System.out.println("you have won the Regular win");
 			//output regular design
@@ -145,6 +147,10 @@ public class SlotMachine {
 				player.setPlayerBalance(player.getPlayerBalance() + this.getSlotRegularPayout());
 				this.setSlotBalance(getSlotBalance() - this.getSlotRegularPayout());
 			}
+		}
+		
+		if(regularWin != getRegularOdds() && jackpotWin != getJackpotOdds()) {
+			TestClass.youLose();
 		}
 		//one random number number for the jackpot
 		//one random number for the regular win
