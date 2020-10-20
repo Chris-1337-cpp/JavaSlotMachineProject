@@ -63,8 +63,13 @@ public class Date {
 		//validates date 
 		boolean verified = true;
 		do {
-		System.out.println("Enter your Date of birth in the Format mm/dd/yyyy");
-		verified = validateDate(input.next());
+			try {
+				System.out.println("Enter your Date of birth in the Format mm/dd/yyyy");
+				verified = validateDate(input.next());
+			}catch(Exception r) {
+				System.out.println("Wrong entry");
+				verified = true;
+			}
 		}while(verified);
 		
 	}//generateDate method

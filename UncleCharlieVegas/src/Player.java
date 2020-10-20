@@ -62,11 +62,22 @@ public class Player {
 	
 	
 	public void makePlayer() {
+		boolean validation = true;
 		System.out.println("<><><><><><><>Create your player<><><><><><><>");
 		name = new Name();
 		DOB = new Date();
-		System.out.println("Enter Players starting balance");
-		setPlayerBalance(input.nextInt());
+		do {
+			try {
+				System.out.println("Enter Players starting balance");
+				setPlayerBalance(input.nextInt());
+				validation = false;
+			}catch(Exception z) {
+				System.out.println("your input was incorrect please try again");
+				input.nextLine();
+				validation = true;
+			}
+		}while(validation);
+
 	}
 	
 	

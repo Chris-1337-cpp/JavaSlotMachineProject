@@ -89,19 +89,31 @@ public class SlotMachine {
 	
 	
 	public void makeSlotMachine() {
-		System.out.println("<><><<><><><>Create your Slot machine<><><><><><>");
-		System.out.println("Enter your machines Name: ");
-		setName(input.nextLine());
-		System.out.println("Enter your machines initial balance: ");
-		setSlotBalance(input.nextInt());
-		System.out.println("Enter your machines jackot payout amount: ");
-		setSlotJackpotPayout(input.nextInt());
-		System.out.println("Enter your machines jackpot odds ie. 1 in every ______: ");
-		setJackpotOdds(input.nextInt());
-		System.out.println("Enter your machines regular payout amount");
-		setSlotRegularPayout(input.nextInt());
-		System.out.println("Enter your machines jackpot odds ie. 1 in every ______: ");
-		setRegularOdds(input.nextInt());
+		boolean validation = true;
+		do {
+			try {
+				
+				System.out.println("<><><<><><><>Create your Slot machine<><><><><><>");
+				System.out.println("Enter your machines Name: ");
+				setName(input.nextLine());
+				System.out.println("Enter your machines initial balance: ");
+				setSlotBalance(input.nextInt());
+				System.out.println("Enter your machines jackot payout amount: ");
+				setSlotJackpotPayout(input.nextInt());
+				System.out.println("Enter your machines jackpot odds ie. 1 in every ______: ");
+				setJackpotOdds(input.nextInt());
+				System.out.println("Enter your machines regular payout amount");
+				setSlotRegularPayout(input.nextInt());
+				System.out.println("Enter your machines regular odds ie. 1 in every ______: ");
+				setRegularOdds(input.nextInt());
+				validation =false;
+			}catch(Exception v) {
+				System.out.println("One of your entrys are invalid");
+				input.nextLine();
+				validation =true;
+			}
+			
+		}while(validation);
 		
 		
 	}//end of makeSlotMachine Method
