@@ -47,20 +47,35 @@ public class Player {
 		Player.playerAmount = playerAmount;
 	}
 	
-	
+	//starts the gambling process for the player 
 	public void gamble(SlotMachine machine) {
+		boolean playAgain = true;
 		//letsGambleText();
 		TestClass.letsGambleText();
-		//Make sure player Is old enough to gamble complete later
-		if(getPlayerBalance() > 0 || machine.getSlotBalance() <= 0) {
-			machine.startGambling(this);//starts the gambling in the machine class
+
+		do {
+			if(getPlayerBalance() > 0 || machine.getSlotBalance() <= 0) {
+				machine.startGambling(this);//starts the gambling in the machine class
+				
+			}else {
+				System.out.println("This player or machine has no money and can not gamble");
+				playAgain = false;
+			}
+			String answer = input.next().toUpperCase();
+			if(answer.charAt(0) == 'Y') {
+				//Character.toString(Character.toUpperCase(input.nextLine().charAt(0)))
+				System.out.println("Character entered is equal to Y: " + Character.toString(Character.toUpperCase(answer.charAt(0))));
+				playAgain = true;
+			}else {
+				System.out.println("Character entered is not equal to Y: " + Character.toString(Character.toUpperCase(answer.charAt(0))));
+				playAgain = false;
+			}
 			
-		}else {
-			System.out.println("This player or machine has no money and can not gamble");
-		}
+		}while(playAgain);
+
 	}//end of gamble method
 	
-	
+	//creates user defined variable
 	public void makePlayer() {
 		boolean validation = true;
 		System.out.println("<><><><><><><>Create your player<><><><><><><>");
