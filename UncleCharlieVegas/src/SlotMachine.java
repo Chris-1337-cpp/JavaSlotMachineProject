@@ -119,16 +119,19 @@ public class SlotMachine {
 	}//end of makeSlotMachine Method
 	
 	public void startGambling(Player player) {
-		System.out.println("Have reached start gambling function");
+		TestClass.letsGambleText();
+		//System.out.println("Have reached start gambling function");
 		player.setPlayerBalance(player.getPlayerBalance() - 1);// player pays the 1 dollar
 		setSlotBalance(getSlotBalance() + 1);// pays the 1dollar fee
 		//start random numbers to determine if they are a winner 
 		int regularWin = random.nextInt(getRegularOdds() + 1);
 		int jackpotWin = random.nextInt(getJackpotOdds() + 1);
+		/*
 		System.out.println("The generated jackpot number is " + jackpotWin);
 		System.out.println("The winning jackpot number is " + getJackpotOdds());
 		System.out.println("The generated regular number is " + regularWin);
 		System.out.println("The winning regular number is " + getRegularOdds());
+		*/
 		
 		//if the random number equals the odds
 		if(getJackpotOdds() == jackpotWin) {

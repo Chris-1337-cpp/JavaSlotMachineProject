@@ -42,11 +42,12 @@ public class TestClass {
 				break;
 			case 3:
 				//Gamble
-				System.out.println("Selected Gamble");
+				//System.out.println("Selected Gamble");
 				int playerSelection;
 				int machineSelection;
 				try {
 				System.out.println("Select a player...............");
+				System.out.println();
 				for(int i = 0; i < Player.getPlayerAmount(); i++) {
 					System.out.println("Option "+i+":.................. ");
 					System.out.println(player[i]);

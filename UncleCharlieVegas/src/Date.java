@@ -149,7 +149,7 @@ public class Date {
 	
 	public String toString() {
 		String result = null;
-		result =  getMonth() + getDay() + getYear() + "" ;
+		result =  getMonth() +"/"+  getDay() + "/"+ getYear() + "" ;
 		return result;
 	}
 	

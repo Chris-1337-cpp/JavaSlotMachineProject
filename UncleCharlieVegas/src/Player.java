@@ -50,8 +50,6 @@ public class Player {
 	//starts the gambling process for the player 
 	public void gamble(SlotMachine machine) {
 		boolean playAgain = true;
-		//letsGambleText();
-		TestClass.letsGambleText();
 
 		do {
 			if(getPlayerBalance() > 0 || machine.getSlotBalance() <= 0) {
@@ -100,7 +98,7 @@ public class Player {
 	public String toString() {
 		String result = null;
 		result = "Player Name: " + getName().toString() + "\n";
-		result += "Player DOB: " + getDOB().toString() + "\n";
+		result += "Player DOB: " + DOB.toString() + "\n";
 		result += "Current player Balance: " + getPlayerBalance() + "\n";
 		return result;
 	}
