@@ -47,7 +47,7 @@ public class Player {
 		Player.playerAmount = playerAmount;
 	}
 	
-	//starts the gambling process for the player 
+	//starts the gambling process for the player verifies thet both the player and machine have money
 	public void gamble(SlotMachine machine) {
 		System.out.println("Enteredd player gamble");
 		boolean playAgain = true;
@@ -58,7 +58,6 @@ public class Player {
 				
 				String answer = input.next().toUpperCase();
 				if(answer.charAt(0) == 'Y') {
-					//Character.toString(Character.toUpperCase(input.nextLine().charAt(0)))
 					System.out.println("Character entered is equal to Y: " + Character.toString(Character.toUpperCase(answer.charAt(0))));
 					playAgain = true;
 				}else {
@@ -75,6 +74,7 @@ public class Player {
 				}
 				if(machine.getSlotBalance() <= 0) {
 					System.out.println("This machine has no money and can not gamble");
+					playAgain = false;
 				}
 			}
 			

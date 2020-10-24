@@ -3,13 +3,13 @@ import java.util.Scanner;
 public class TestClass {
 
 	public static void main(String[] args) {
-		slotMachine();
+		slotMachine(); //Outputs graphic for title screen
 		
 		Scanner input = new Scanner(System.in);
-		boolean playing = true;
+		boolean playing = true; // allows game to continually loop
 		
 		//create array of slot Machines
-		SlotMachine[] machine = new SlotMachine[50];
+		SlotMachine[] machine = new SlotMachine[50]; 
 		
 		//create array of players 
 		Player[] player = new Player[50];
@@ -22,6 +22,8 @@ public class TestClass {
 		//create default player
 		player[0] = new Player(new Name("Monkey","D","Luffy"),new Date(5,5,1999),1000);
 		
+		
+		//loops menu and options until quit is selected
 		do {
 			int choice = menue();//outputs menu and takes in the users selection
 			switch(choice) {
@@ -46,6 +48,8 @@ public class TestClass {
 				int playerSelection;
 				int machineSelection;
 				try {
+					
+					//lists all selectable players
 				System.out.println("Select a player...............");
 				System.out.println();
 				for(int i = 0; i < Player.getPlayerAmount(); i++) {
@@ -53,12 +57,15 @@ public class TestClass {
 					System.out.println(player[i]);
 				}
 				System.out.print(".........................>");
-				playerSelection = input.nextInt();
+				playerSelection = input.nextInt(); // input for choosen player
+				
+				// liista all selectable machines
 				System.out.println("Select a machine...............");
 				for(int i = 0; i < SlotMachine.getNumSlots(); i++) {
 					System.out.println("Option ["+i+"]:.................. ");
 					System.out.println(machine[i]);
 				}
+				//calls the player gamble function bsed on selection
 				System.out.print(".........................>");
 				machineSelection = input.nextInt();
 				player[playerSelection].gamble(machine[machineSelection]);
@@ -73,6 +80,7 @@ public class TestClass {
 				playing = false;
 				break;
 			case 5:
+				
 				//outputs list of all slot machines and players
 				System.out.println("viewing all slot machines and all players");
 				System.out.println("viewing all slot machines");
@@ -85,7 +93,7 @@ public class TestClass {
 					System.out.println("I has the value " + i);
 					System.out.println(player[i]);
 				}
-				
+				//number of players and machines 
 				System.out.println("There are: " + Player.getPlayerAmount() + " many players");
 				System.out.println("There are: " + SlotMachine.getNumSlots() + " many machines");
 				break;

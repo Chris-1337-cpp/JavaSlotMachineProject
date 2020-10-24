@@ -3,6 +3,7 @@ public class SlotMachine {
 	Scanner input = new Scanner(System.in);
 	Random random = new Random();
 	
+	//variables used 
 	private String name;
 	private int slotBalance;// amount of money left in the machine
 	private int slotJackpotPayout;//amount of money the jackpot payout is 
@@ -123,7 +124,7 @@ public class SlotMachine {
 		//System.out.println("Have reached start gambling function");
 		player.setPlayerBalance(player.getPlayerBalance() - 1);// player pays the 1 dollar
 		setSlotBalance(getSlotBalance() + 1);// pays the 1dollar fee
-		//start random numbers to determine if they are a winner 
+		//start creates numbers to determine if they are a winner 
 		int regularWin = random.nextInt(getRegularOdds() + 1);
 		int jackpotWin = random.nextInt(getJackpotOdds() + 1);
 		

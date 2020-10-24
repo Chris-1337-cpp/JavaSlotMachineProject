@@ -52,12 +52,13 @@ public class Name {
 	
 	public String toString() {
 		String result = null;
-		firstName = firstName.substring(0,1).toUpperCase() + firstName.substring(1);
-		lastName = lastName.substring(0,1).toUpperCase() + lastName.substring(1);
+		firstName = firstName.substring(0,1).toUpperCase() + firstName.substring(1).toLowerCase();
+		lastName = lastName.substring(0,1).toUpperCase() + lastName.substring(1).toLowerCase();
 		
 		if(middleName.isEmpty()) {
 			result = firstName + " " + lastName;
 		}else {
+			middleName = middleName.substring(0,1) + middleName.substring(1).toLowerCase();
 			result = firstName + " " + middleName + " " + lastName;
 		}
 		
