@@ -126,6 +126,7 @@ public class SlotMachine {
 		//start random numbers to determine if they are a winner 
 		int regularWin = random.nextInt(getRegularOdds() + 1);
 		int jackpotWin = random.nextInt(getJackpotOdds() + 1);
+		
 		/*
 		System.out.println("The generated jackpot number is " + jackpotWin);
 		System.out.println("The winning jackpot number is " + getJackpotOdds());

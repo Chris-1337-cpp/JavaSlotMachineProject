@@ -49,24 +49,33 @@ public class Player {
 	
 	//starts the gambling process for the player 
 	public void gamble(SlotMachine machine) {
+		System.out.println("Enteredd player gamble");
 		boolean playAgain = true;
 
 		do {
-			if(getPlayerBalance() > 0 || machine.getSlotBalance() <= 0) {
+			if(getPlayerBalance() > 0 && machine.getSlotBalance() > 0) {
 				machine.startGambling(this);//starts the gambling in the machine class
 				
+				String answer = input.next().toUpperCase();
+				if(answer.charAt(0) == 'Y') {
+					//Character.toString(Character.toUpperCase(input.nextLine().charAt(0)))
+					System.out.println("Character entered is equal to Y: " + Character.toString(Character.toUpperCase(answer.charAt(0))));
+					playAgain = true;
+				}else {
+					System.out.println("Character entered is not equal to Y: " + Character.toString(Character.toUpperCase(answer.charAt(0))));
+					playAgain = false;
+				}
+
+				
 			}else {
-				System.out.println("This player or machine has no money and can not gamble");
-				playAgain = false;
-			}
-			String answer = input.next().toUpperCase();
-			if(answer.charAt(0) == 'Y') {
-				//Character.toString(Character.toUpperCase(input.nextLine().charAt(0)))
-				System.out.println("Character entered is equal to Y: " + Character.toString(Character.toUpperCase(answer.charAt(0))));
-				playAgain = true;
-			}else {
-				System.out.println("Character entered is not equal to Y: " + Character.toString(Character.toUpperCase(answer.charAt(0))));
-				playAgain = false;
+				System.out.println("Reached bottom else");
+				if(getPlayerBalance() <= 0) {
+					System.out.println("This player has no money and can not gamble");
+					playAgain = false;
+				}
+				if(machine.getSlotBalance() <= 0) {
+					System.out.println("This machine has no money and can not gamble");
+				}
 			}
 			
 		}while(playAgain);
