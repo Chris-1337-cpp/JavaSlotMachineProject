@@ -107,7 +107,7 @@ public class Date {
 
 				
 			}catch(Exception e) {
-				System.out.println("Incorrect input try again");
+				//System.out.println("Incorrect input try again");
 				result = true;
 			}
 		}else{

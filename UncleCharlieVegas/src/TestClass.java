@@ -1,3 +1,9 @@
+/*
+Project : Java slot machine
+Green Bean Group: Tuan Nguyen, Christopher Bain, Carlos Vela
+Date: 10/25/2020
+*/
+
 import java.util.Scanner;
 
 public class TestClass {
