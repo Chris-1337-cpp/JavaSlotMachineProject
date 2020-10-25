@@ -11,7 +11,7 @@ public class Player {
 	
 	public Player(Name name, Date dOB, int playerBalance) {
 		setName(name);
-		setDOB(dOB);
+		setDOB(dOB); 
 		setPlayerBalance(playerBalance);
 		setPlayerAmount(this.playerAmount + 1);
 	}

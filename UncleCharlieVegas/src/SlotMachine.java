@@ -124,7 +124,7 @@ public class SlotMachine {
 		//System.out.println("Have reached start gambling function");
 		player.setPlayerBalance(player.getPlayerBalance() - 1);// player pays the 1 dollar
 		setSlotBalance(getSlotBalance() + 1);// pays the 1dollar fee
-		//start creates numbers to determine if they are a winner 
+		//start  numbers to determine if they are a winner 
 		int regularWin = random.nextInt(getRegularOdds() + 1);
 		int jackpotWin = random.nextInt(getJackpotOdds() + 1);
 		

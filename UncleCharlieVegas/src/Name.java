@@ -3,9 +3,9 @@ public class Name {
 
 	Scanner input = new Scanner(System.in);
 	
-	String firstName;
-	String middleName;
-	String lastName;
+	private String firstName;
+	private String middleName;
+	private String lastName;
 	
 	
 	public Name(String firstName,String middleName,String lastName) {
