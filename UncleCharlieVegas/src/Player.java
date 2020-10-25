@@ -86,8 +86,8 @@ public class Player {
 	public void makePlayer() {
 		boolean validation = true;
 		System.out.println("<><><><><><><>Create your player<><><><><><><>");
-		name = new Name();
-		DOB = new Date();
+		name = new Name();//calls the no arg constructor for Name class
+		DOB = new Date();//calls the no arg constructor for the Date class
 		do {
 			try {
 				System.out.println("Enter Players starting balance");

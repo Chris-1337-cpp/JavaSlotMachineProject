@@ -15,7 +15,7 @@ public class TestClass {
 		Player[] player = new Player[50];
 		
 		//create slot machines
-		machine[0] = new SlotMachine("Lucky 7",5000,5000,10000,5,10);
+		machine[0] = new SlotMachine("Lucky 7",5000,5000,10000,5,10); // this creates the slot machine object
 		machine[1] = new SlotMachine("Lucky Lotto",55000,75000,100000,25,50);
 		machine[2] = new SlotMachine("Purple People Eater",1000,40,50,2,5);
 		
@@ -30,8 +30,8 @@ public class TestClass {
 			case 1:
 				//add player
 				System.out.println();
-				//System.out.println("Selected add a player");/////////////////////////////////////////////////
-				player[Player.getPlayerAmount()] = new Player();
+				
+				player[Player.getPlayerAmount()] = new Player();// calls the no arg constructor in the player class
 				System.out.println("There are now " + Player.getPlayerAmount() + " Players");
 				System.out.println();
 				break;
